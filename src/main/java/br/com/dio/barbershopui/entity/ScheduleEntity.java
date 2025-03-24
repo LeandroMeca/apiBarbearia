@@ -1,14 +1,7 @@
 package br.com.dio.barbershopui.entity;
 
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
+import br.com.dio.barbershopui.controller.request.SaveScheduleRequest;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -25,8 +18,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
                 @UniqueConstraint(name = "UK_SCHEDULE_INTERVAL", columnNames = {"start_at", "end_at"}),
         }
 )
-@Getter
-@Setter
+
 @ToString
 public class ScheduleEntity {
 
@@ -45,6 +37,23 @@ public class ScheduleEntity {
     @JoinColumn(name = "client_id")
     private ClientEntity client = new ClientEntity();
 
+
+    // Remover de ScheduleEntity.java:
+
+    public ScheduleEntity toEntity(SaveScheduleRequest request) {
+        var entity = new ScheduleEntity();
+        entity.setStartAt(request.startAt());
+        entity.setEndAt(request.endAt());
+
+        var client = new ClientEntity();
+        client.setId(request.clientId());
+        entity.setClient(client);
+
+        return entity;
+    }
+
+
+
     @Override
     public boolean equals(final Object o) {
         if (!(o instanceof ScheduleEntity that)) return false;
@@ -56,5 +65,38 @@ public class ScheduleEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, startAt, endAt);
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public OffsetDateTime getStartAt() {
+        return startAt;
+    }
+
+    public void setStartAt(OffsetDateTime startAt) {
+        this.startAt = startAt;
+    }
+
+    public OffsetDateTime getEndAt() {
+        return endAt;
+    }
+
+    public void setEndAt(OffsetDateTime endAt) {
+        this.endAt = endAt;
+    }
+
+    public ClientEntity getClient() {
+        return client;
+    }
+
+    public void setClient(ClientEntity client) {
+        this.client = client;
     }
 }

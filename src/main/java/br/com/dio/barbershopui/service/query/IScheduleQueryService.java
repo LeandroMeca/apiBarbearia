@@ -1,6 +1,5 @@
 package br.com.dio.barbershopui.service.query;
 
-
 import br.com.dio.barbershopui.entity.ScheduleEntity;
 
 import java.time.OffsetDateTime;
@@ -13,4 +12,5 @@ public interface IScheduleQueryService {
     List<ScheduleEntity> findInMonth(final OffsetDateTime startAt, final OffsetDateTime endAt);
 
     void verifyIfScheduleExists(final OffsetDateTime startAt, final OffsetDateTime endAt);
+
 }
