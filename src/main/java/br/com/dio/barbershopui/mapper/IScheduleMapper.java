@@ -6,14 +6,10 @@ import br.com.dio.barbershopui.controller.response.SaveScheduleResponse;
 import br.com.dio.barbershopui.controller.response.ScheduleAppointmentMonthResponse;
 import br.com.dio.barbershopui.entity.ClientEntity;
 import br.com.dio.barbershopui.entity.ScheduleEntity;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 import java.util.List;
 
-import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
-@Mapper(componentModel = SPRING)
 public interface IScheduleMapper {
 
 

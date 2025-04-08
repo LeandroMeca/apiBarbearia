@@ -5,7 +5,6 @@ import br.com.dio.barbershopui.exception.NotFoundException;
 import br.com.dio.barbershopui.exception.PhoneInUseException;
 import br.com.dio.barbershopui.repository.IClientRepository;
 import br.com.dio.barbershopui.service.query.IClientQueryService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

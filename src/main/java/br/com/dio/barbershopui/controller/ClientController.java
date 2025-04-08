@@ -7,12 +7,9 @@ import br.com.dio.barbershopui.controller.response.ListClientResponse;
 import br.com.dio.barbershopui.controller.response.SaveClientResponse;
 import br.com.dio.barbershopui.controller.response.UpdateClientResponse;
 import br.com.dio.barbershopui.mapper.ClientMapper;
-import br.com.dio.barbershopui.mapper.IClientMapper;
 import br.com.dio.barbershopui.service.IClientService;
 import br.com.dio.barbershopui.service.query.IClientQueryService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

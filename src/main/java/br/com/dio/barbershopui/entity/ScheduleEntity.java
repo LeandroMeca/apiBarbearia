@@ -2,9 +2,7 @@ package br.com.dio.barbershopui.entity;
 
 import br.com.dio.barbershopui.controller.request.SaveScheduleRequest;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -19,7 +17,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
         }
 )
 
-@ToString
+
 public class ScheduleEntity {
 
     @Id
@@ -32,7 +30,7 @@ public class ScheduleEntity {
     @Column(nullable = false, name = "end_at")
     private OffsetDateTime endAt;
 
-    @ToString.Exclude
+
     @ManyToOne
     @JoinColumn(name = "client_id")
     private ClientEntity client = new ClientEntity();

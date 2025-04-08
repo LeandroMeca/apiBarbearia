@@ -8,7 +8,6 @@ import br.com.dio.barbershopui.mapper.ScheduleMapper;
 import br.com.dio.barbershopui.service.IScheduleService;
 import br.com.dio.barbershopui.service.query.IScheduleQueryService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

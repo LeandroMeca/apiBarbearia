@@ -1,10 +1,7 @@
 package br.com.dio.barbershopui.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -21,9 +18,6 @@ import static jakarta.persistence.GenerationType.IDENTITY;
                 @UniqueConstraint(name = "UK_PHONE", columnNames = "phone")
         }
 )
-
-
-@ToString
 public class ClientEntity {
 
     @Id
@@ -39,7 +33,7 @@ public class ClientEntity {
     @Column(nullable = false, length = 11, columnDefinition = "char(11)")
     private String phone;
 
-    @ToString.Exclude
+
     @OneToMany(mappedBy = "client", cascade = ALL, orphanRemoval = true)
     private Set<ScheduleEntity> schedules = new HashSet<>();
 

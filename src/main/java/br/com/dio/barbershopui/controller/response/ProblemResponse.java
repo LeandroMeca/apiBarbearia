@@ -1,7 +1,7 @@
 package br.com.dio.barbershopui.controller.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
+
 
 import java.time.OffsetDateTime;
 
@@ -12,7 +12,7 @@ public record ProblemResponse(@JsonProperty("status")
                               @JsonProperty("message")
                               String message) {
 
-    @Builder(toBuilder = true)
+
     public ProblemResponse{}
 
 }
